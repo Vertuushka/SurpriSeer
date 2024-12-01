@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'authentication',
     'landing',
     'info',
+    'dashboard',
 
     'allauth',
     'allauth.account',

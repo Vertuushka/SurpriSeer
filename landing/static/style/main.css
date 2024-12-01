@@ -10,11 +10,18 @@
 
 body {
     background-color: #F5F4F3;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .pageContent{
+    width: 70%;
     max-width: 70%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 header {
@@ -107,6 +114,7 @@ footer{
 
 .footerLinks{
     display: flex;
+    justify-content: center;
     gap: 30px;
 }
 
@@ -123,4 +131,46 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.wishlistsContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+}
+
+.wishCard {
+    min-width: 30%;
+    height: 135px;
+    background: linear-gradient(45deg, #8338EC, #3A86FF);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.wishCardRow{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.wishCardHeader {
+    color: #fff;
+    font-weight: bold;
+}
+
+.wishCardAuthor{
+    color: #fff;
+    text-decoration: underline;
+    font-size: small;
+}
+
+.wishListActionButtonContainer {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

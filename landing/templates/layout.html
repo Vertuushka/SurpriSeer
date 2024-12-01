@@ -23,7 +23,7 @@
             </div>
             <div class="content headerLinkContainer">
                 {% if request.user.is_authenticated %}
-                    <a href="" class="headerLink">My boxes</a>
+                    <a href="{% url 'dashboard' %}" class="headerLink">My wishlists</a>
                 {% else %}
                     <a href="{% provider_login_url 'google' %}" class="headerLink">Login</a>
                 {% endif %}
