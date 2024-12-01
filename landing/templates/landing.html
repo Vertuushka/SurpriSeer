@@ -1,31 +1,14 @@
 {% extends 'layout.html' %}
 {% load static %}
 {% load socialaccount %}
+{% block title %}
+    SurpriSeer
+{% endblock %} 
 {% block content %}
-    <div class="pageContent">
-        <header>
-            <div class="content">
-                <p class="logoName">SurpriSeer</p>
-                <img src="{% static 'img/surpriseer_logo.svg' %}" alt="logotype" class="logo">
-            </div>
-            <div class="content headerLinkContainer">
-                {% if request.user.is_authenticated %}
-                    <a href="" class="headerLink">My boxes</a>
-                {% else %}
-                    <a href="{% provider_login_url 'google' %}" class="headerLink">Login</a>
-                {% endif %}
-                {% if request.user.is_authenticated and request.user.is_staff %}
-                    <a href="{% url 'admin:index' %}" class="headerLink" target="_blank">Admin</a>
-                {% endif %}
-            </div>
-        </header>
-        <main>
-            <div class="mainpageHeader">
-                <h1>Perfect gifts, every time</h1>
-                <p>Build your wishlist, invite friends, and let them choose — all while keeping it a surprise. 🎉</p>
-            </div>        
-            <img src="{% static 'img/mainpage_img.svg' %}" alt="">
-            <a href="" class="buttonLink"><button class="actionButton">Get started!</button></a>
-        </main>
-    </div>
+    <div class="mainpageHeader">
+        <h1>Perfect gifts, every time</h1>
+        <p class="mainpageHeaderDesctiption">Build your wishlist, invite friends, and let them choose — all while keeping it a surprise. 🎉</p>
+    </div>        
+    <img src="{% static 'img/mainpage_img.svg' %}" alt="">
+    <a href="" class="buttonLink"><button class="actionButton">Get started!</button></a>
 {% endblock %}
