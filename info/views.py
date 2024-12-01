@@ -6,3 +6,6 @@ def privacy(request):
 
 def tos(request):
     return render(request, 'tos.html')
+
+def about(request):
+    return render(request, 'about.html')
