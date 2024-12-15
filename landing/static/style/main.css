@@ -151,6 +151,12 @@ h2 {
     gap: 10px;
 }
 
+.wishCard:hover {
+    cursor: pointer;
+    background: linear-gradient(270deg, #8338EC, #3A86FF);
+    text-decoration: none;
+}
+
 
 .wishCardRow{
     display: flex;
@@ -173,4 +179,163 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.wishListForm {
+    width: 70%;
+    height: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 16px;
+    gap: 20px;
+    color: #fff;
+}
+
+.formSide {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 15px;
+    width: 45%;
+    height: 100%;
+}
+
+.giftListForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 70%;
+    overflow-y: auto;
+}
+
+.giftInput {
+    border: none;
+    outline: none;
+    background: none;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.colorPicker {
+    display: flex;
+    margin-top: auto;
+    gap: 10px;
+}
+
+.colorCircle {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+}
+
+.colorCircle:hover {
+    cursor:pointer;
+}
+
+.gradient1 {
+    background: linear-gradient(45deg, #3A86FF, #8338EC);
+}
+
+.gradient2 {
+    background: linear-gradient(45deg, #FF006E, #FB5607);
+}
+
+.gradient3 {
+    background: linear-gradient(45deg, #00FF87, #60EFFF);
+}
+
+.gradient4 {
+    background: linear-gradient(45deg, #FF1B6B, #45CAFF);
+}
+
+.gradient5 {
+    background: linear-gradient(45deg, #FF930F, #FFF95B);
+}
+
+.gradient6 {
+    background: linear-gradient(45deg, #51C26F, #F2E901);
+}
+
+#headerInput {
+    border: none;
+    outline: none;
+    background: none;
+    text-decoration: underline;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    max-width: 100%;
+}
+
+#friendInput {
+    border: none;
+    outline: none;
+    background: none;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.colorRadio {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.inviteContainer {
+    margin-top: auto;
+    padding: 20px 10px;
+    background-color: rgba(0, 0, 0, 0.32);
+    width: 100%;
+    height: 35px;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+}
+
+.copyButton {
+    background: none;
+    border: none;
+    outline: none;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copyButton:hover {
+    cursor: pointer;
+}
+
+.copyButton img {
+    width: 1rem;
+    height: 1rem;
+}
+
+.sbuBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 60px;
+}
+
+.oneLineForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#roundedTextInput {
+    height: 35px;
+    width: 50%;
+    border: 1px solid #000;
+    border-radius: 12px;
+    padding: 0 10px;
+    outline: none;
 }

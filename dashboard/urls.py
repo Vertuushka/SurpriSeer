@@ -3,4 +3,5 @@ from . views import *
 
 urlpatterns = [
     path('', dashboard, name="dashboard"),
+    path('new/', newWishList, name="newWishList"),
 ]

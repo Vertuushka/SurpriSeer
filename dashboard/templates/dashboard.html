@@ -9,22 +9,16 @@
 </div>
 <div class="pageContent">
     <div class="wishlistsContainer">
+        {% for row, element in user_wishLists %}
         <div class="wishCardRow">
-            <div class="wishCard">
-                <p class="wishCardHeader">Christmas</p>
-                <p class="wishCardAuthor">User 1</p>
-            </div>
-            <div class="wishCard"></div>
-            <div class="wishCard"></div>
+            <a href="" class="wishCard">
+                <p class="wishCardHeader">{{element.name}}</p>
+            </a>
         </div>
-        <div class="wishCardRow">
-            <div class="wishCard"></div>
-            <div class="wishCard"></div>
-            <div class="wishCard"></div>
-        </div>
+        {% endfor %}
     </div>
     <div class="wishListActionButtonContainer">
-        <a href="" class="buttonLink"><button class="actionButton">Create or join wishlist</button></a>
+        <a href="{% url 'newWishList' %}" class="buttonLink"><button class="actionButton">Create or join wishlist</button></a>
     </div>
 </div>
 {% endblock %}

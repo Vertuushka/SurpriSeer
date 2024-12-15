@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}
+    Create or join wishlist - SurpriSeer
+{% endblock %} 
+
+{% block content %}
+<div class="mainpageHeader">
+    <h1>Create or join wishlist</h1>
+    <p>You can start by making your wishlist and inviting some friends! If they're already have an account, they'll get an invitation. Or you can invite new friends with your link. Then you'll need to approve their request to join your wishlist.</p>
+</div>
+<div class="pageContent">
+    <form action="{% url 'dashboard' %}" class="wishListForm" method="POST">
+        {% csrf_token %}
+        <div class="formSide">
+            <input type="text" name="title" id="headerInput" placeholder="Header (ex. Birthday)" required>
+            <div class="giftListForm">
+                <p>List of gifts:</p>
+                <input type="text" name="gift_0" id="firstGift" class="giftInput" required>
+            </div>
+            <div class="colorPicker">
+                <p>Color</p>
+                <div class="colorCircle gradient1"><input type="radio" name="colorPicker" id="" class="colorRadio" value="1"></div>
+                <div class="colorCircle gradient2"><input type="radio" name="colorPicker" id="" class="colorRadio" value="2"></div>
+                <div class="colorCircle gradient3"><input type="radio" name="colorPicker" id="" class="colorRadio" value="3"></div>
+                <div class="colorCircle gradient4"><input type="radio" name="colorPicker" id="" class="colorRadio" value="4"></div>
+                <div class="colorCircle gradient5"><input type="radio" name="colorPicker" id="" class="colorRadio" value="5"></div>
+                <div class="colorCircle gradient6"><input type="radio" name="colorPicker" id="" class="colorRadio" value="6"></div>
+            </div>
+        </div>
+        <div class="formSide">
+            <div class="inviteContainer">
+                <p>Invite code: <span id="inviteCode">{{ invite_code }}</span></p>
+                <button class="copyButton" type="button"><img src="{% static 'img/copy.svg' %}" alt="" id="copyImg"></button>
+            </div>
+        </div>
+    </form>
+    <div class="wishListActionButtonContainer">
+        <p class="buttonLink"><button class="actionButton" id="createWishListBtn">Save</button></p>
+    </div>
+    <div class="sbuBlock">
+        <h1>Or join via invite code</h1>
+        <p>Wishlist’s owner will get a join request from you that should be confirmed before you can access the wishlist</p>
+        <form action="" class="oneLineForm">
+            <input type="text" name="" id="roundedTextInput">
+        </form>
+        <p class="buttonLink"><button class="actionButton">Join</button></p>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'script/wishlist.js' %}"></script>
+{% endblock %}
