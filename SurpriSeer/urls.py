@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import handler404, handler500, handler403, handler400
+from django.shortcuts import render
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,3 +25,21 @@ urlpatterns = [
     path('', include('landing.urls')),
     path('dashboard/', include('dashboard.urls'))
 ]
+
+def custom_404(request, exception):
+    return render(request, 'oops.html', status=404)
+
+def custom_500(request):
+    return render(request, 'oops.html', status=500)
+
+def custom_403(request, exception):
+    return render(request, 'oops.html', status=403)
+
+def custom_400(request, exception):
+    return render(request, 'oops.html', status=400)
+
+
+handler404 = custom_404
+handler500 = custom_500
+handler403 = custom_403
+handler400 = custom_400

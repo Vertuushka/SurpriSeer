@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+
 * {
     padding: 0;
     margin: 0;
@@ -16,8 +17,8 @@ body {
 }
 
 .pageContent{
-    width: 70%;
-    max-width: 70%;
+    width: 80%;
+    max-width: 80%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -31,16 +32,26 @@ header {
     align-items: center;
 }
 
+.alert {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0 0 0;
+    width: 100%;
+}
+
 .content {
     display: flex;
     gap: 5px;
 }
 
 .headerLinkContainer {
+    display: flex;
     gap: 50px;
 }
 
-.logoName {
+.bold {
     font-weight: bold;
 }
 
@@ -59,12 +70,44 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 60px;
-    margin-top: 40px;
+    gap: 25px;
+    margin-top: 25px;
 }
 
-.mainpageHeader {
-    max-width: 45%;
+h1 {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.separator {
+    width: 100%;
+    height: 10px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #FB5607, #FF006E, #8338EC, #3A86FF);
+}
+
+footer{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.footerLinks{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.footerLink{
+    font-size: 0.9rem;
+}
+
+
+.mainContentHeader {
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,17 +116,8 @@ main {
     text-align: center;
 }
 
-h1 {
-    font-size: 1.3rem;
-    font-weight: bold;
-}
-
-.mainpageHeaderDesctiption {
-    font-size: 1.2rem;
-}
-
 .actionButton {
-    padding: 16px 60px;
+    padding: 15px 60px;
     border: none;
     border-radius: 14px;
     background-color: #8338EC;
@@ -96,143 +130,12 @@ h1 {
     background-color: #6230A9;
 }
 
-.separator {
-    width: 100%;
-    height: 10px;
-    border-radius: 4px;
-    background: linear-gradient(90deg, #FB5607, #FF006E, #8338EC, #3A86FF);
-}
-
-footer{
-    margin-top: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
-.footerLinks{
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.footerLink{
-    font-size: 0.9rem;
-}
-
-h2 {
-    text-align: center;
-}
-
-.textBlock {
-    width: 75%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.wishlistsContainer{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 20px;
-}
-
-.wishCard {
-    min-width: 30%;
-    height: 135px;
-    background: linear-gradient(45deg, #8338EC, #3A86FF);
-    border-radius: 12px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.wishCard:hover {
-    cursor: pointer;
-    background: linear-gradient(270deg, #8338EC, #3A86FF);
-    text-decoration: none;
-}
 
 
-.wishCardRow{
-    display: flex;
-    justify-content: space-evenly;
-}
 
-.wishCardHeader {
-    color: #fff;
-    font-weight: bold;
-}
 
-.wishCardAuthor{
-    color: #fff;
-    text-decoration: underline;
-    font-size: small;
-}
 
-.wishListActionButtonContainer {
-    margin-top: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.wishListForm {
-    width: 70%;
-    height: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    display: flex;
-    justify-content: space-around;
-    border-radius: 16px;
-    gap: 20px;
-    color: #fff;
-}
-
-.formSide {
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    gap: 15px;
-    width: 45%;
-    height: 100%;
-}
-
-.giftListForm {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-height: 70%;
-    overflow-y: auto;
-}
-
-.giftInput {
-    border: none;
-    outline: none;
-    background: none;
-    color: #fff;
-    border-bottom: 1px solid #fff;
-}
-
-.colorPicker {
-    display: flex;
-    margin-top: auto;
-    gap: 10px;
-}
-
-.colorCircle {
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-}
-
-.colorCircle:hover {
-    cursor:pointer;
-}
 
 .gradient1 {
     background: linear-gradient(45deg, #3A86FF, #8338EC);
@@ -258,61 +161,31 @@ h2 {
     background: linear-gradient(45deg, #51C26F, #F2E901);
 }
 
-#headerInput {
-    border: none;
-    outline: none;
-    background: none;
-    text-decoration: underline;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #fff;
-    max-width: 100%;
+.gradient1_interactive:hover {
+    background: linear-gradient(270deg, #3A86FF, #8338EC);
 }
 
-#friendInput {
-    border: none;
-    outline: none;
-    background: none;
-    color: #fff;
-    border-bottom: 1px solid #fff;
+.gradient2_interactive:hover {
+    background: linear-gradient(270deg, #FF006E, #FB5607);
 }
 
-.colorRadio {
-    width: 100%;
-    height: 100%;
-    display: none;
+.gradient3_interactive:hover {
+    background: linear-gradient(270deg, #00FF87, #60EFFF);
 }
 
-.inviteContainer {
-    margin-top: auto;
-    padding: 20px 10px;
-    background-color: rgba(0, 0, 0, 0.32);
-    width: 100%;
-    height: 35px;
-    border-radius: 8px;
-
-    display: flex;
-    align-items: center;
+.gradient4_interactive:hover {
+    background: linear-gradient(270deg, #FF1B6B, #45CAFF);
 }
 
-.copyButton {
-    background: none;
-    border: none;
-    outline: none;
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.gradient5_interactive:hover {
+    background: linear-gradient(270deg, #FF930F, #FFF95B);
 }
 
-.copyButton:hover {
-    cursor: pointer;
+.gradient6_interactive:hover {
+    background: linear-gradient(270deg, #51C26F, #F2E901);
 }
 
-.copyButton img {
-    width: 1rem;
-    height: 1rem;
-}
+
 
 .sbuBlock {
     display: flex;
@@ -339,3 +212,91 @@ h2 {
     padding: 0 10px;
     outline: none;
 }
+
+
+
+.friendBox {
+    display: flex;
+}
+
+.friendActionContainer {
+    margin: 0 0 0 auto;
+    padding-right: 15px;
+}
+
+.giftContainer {
+    display: flex;
+}
+
+.giftActionContainer{
+    margin: 0 0 0 auto;
+    padding-right: 15px;
+}
+
+@media (max-width: 790px) {
+    header {
+        height: auto;
+        flex-direction: column;
+        padding-top: 15px;
+        gap: 5px;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+     
+    main {
+        width: 100%;
+    }
+    .headerLinkContainer {
+        justify-content: space-between;
+    }
+    .pageContent {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 25px;
+    }   
+    .wishListFriendForm {
+        width: 100%;
+    }
+    .wishListForm{
+        width: 100%;
+    }
+
+    .landingImg {
+        width: 100%;
+        height: auto;
+    }
+
+    footer {
+        gap: 15px;
+    }
+
+    .footerLinks {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .wishCardRow {
+        flex-direction: column;
+    }
+
+    .actionButton {
+        padding: 15px 25px;
+    }
+
+
+}
+
+@media (min-width: 790px) and (max-width: 1200px){
+    .pageContent {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 25px;
+    }   
+    .wishListFriendForm {
+        width: 100%;
+    }
+    .wishListForm{
+        width: 100%;
+    }
+}
+

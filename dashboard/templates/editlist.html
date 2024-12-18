@@ -1,0 +1,101 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}
+    {{wishlist.name}}
+{% endblock %} 
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'style/dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="mainContentHeader">
+    {% if request.user == wishlist.user %}
+        <h1>Edit your wishlist</h1>
+    {% else %}
+        <h1>Select gifts</h1>
+    {% endif %}
+</div>
+{% if wishlist.user == request.user %}
+<form action="{% url 'dashboard' %}" class="wishListForm" method="POST">
+    {% csrf_token %}
+    <div class="formSide">
+        <input type="text" name="title" id="headerInput" placeholder="Header (ex. Birthday)" required value="{{wishlist.name}}">
+        <div class="giftListForm">
+            <p>List of gifts:</p>
+            {% for gift in gifts %}
+            <div class="giftContainer">
+                <input type="text" name="gift_{{ forloop.counter }}"class="giftInput" required value="{{gift.name}}">
+            </div>
+            {% endfor %}
+            <input type="text" name="gift_0" id="firstGift" class="giftInput">
+        </div>
+        <div class="colorPicker">
+            <p>Color</p>
+            <div class="colorCircle gradient1"><input type="radio" name="colorPicker" id="" class="colorRadio" value="1" {% if wishlist.color_scheme == 1 %} checked {% endif %}/></div>
+            <div class="colorCircle gradient2"><input type="radio" name="colorPicker" id="" class="colorRadio" value="2" {% if wishlist.color_scheme == 2 %} checked {% endif %}/></div>
+            <div class="colorCircle gradient3"><input type="radio" name="colorPicker" id="" class="colorRadio" value="3" {% if wishlist.color_scheme == 3 %} checked {% endif %}/></div>
+            <div class="colorCircle gradient4"><input type="radio" name="colorPicker" id="" class="colorRadio" value="4" {% if wishlist.color_scheme == 4 %} checked {% endif %}/></div>
+            <div class="colorCircle gradient5"><input type="radio" name="colorPicker" id="" class="colorRadio" value="5" {% if wishlist.color_scheme == 5 %} checked {% endif %}/></div>
+            <div class="colorCircle gradient6"><input type="radio" name="colorPicker" id="" class="colorRadio" value="6" {% if wishlist.color_scheme == 6 %} checked {% endif %}/></div>
+        </div>
+    </div>
+    <div class="formSide">
+        <p class="subHeader">Friends and requests:</p>
+        <div class="giftListForm">
+            {% for friend in friends %}
+                <div class="friendBox">
+                    <div class="friendNameContainer">
+                        <p>{{friend.friend.username}}</p>
+                    </div>
+                    <div class="friendActionContainer">
+                        {% if not friend.is_allowed %}
+                            <a href="{% url 'addUserById' wishlist.code friend.friend.id %}"><img src="{% static 'img/check_box.svg' %}" alt=""></a>
+                            <a href="{% url 'deleteUserById' wishlist.code friend.friend.id %}"><img src="{% static 'img/decline.svg' %}" alt=""></a>
+                        {% else %}
+                            <a href="{% url 'deleteUserById' wishlist.code friend.friend.id %}"><img src="{% static 'img/close.svg' %}" alt=""></a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="inviteContainer">
+            <p>Invite code: <span id="inviteCode">{{ wishlist.code }}</span></p>
+            <button class="copyButton" type="button"><img src="{% static 'img/copy.svg' %}" alt="" id="copyImg"></button>
+        </div>
+    </div>
+</form>
+<div class="wishListActionButtonContainer">
+    <p class="buttonLink"><button class="actionButton" id="createWishListBtn">Save</button></p>
+</div>
+{% else %}
+<div class="wishListFriendForm gradient{{wishlist.color_scheme}}">
+        <p id="headerInput">{{wishlist.name}} - {{wishlist.user.username}}</p>
+        <div class="giftListForm">
+            <p>List of gifts:</p>
+            {% for gift in gifts %}
+            <div class="giftContainer">
+                {% if gift.booked_by %}
+                    {% if gift.booked_by != request.user %}
+                        <p><del>{{gift.name}}</del> (already booked)</p>
+                    {% else %}
+                        <p>{{gift.name}}</p>
+                        <div class="friendActionContainer">
+                            <a href="{% url 'unbookById' wishlist.code gift.id %}"><img src="{% static 'img/close.svg' %}" alt=""></a>
+                        </div>
+                    {% endif %}
+                {% else %}
+                    <p>{{gift.name}}</p>
+                    <div class="friendActionContainer">
+                        <a href="{% url 'bookById' wishlist.code gift.id %}"><img src="{% static 'img/gift.svg' %}" alt=""></a>
+                    </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'script/wishlist.js' %}"></script>
+{% endblock %}

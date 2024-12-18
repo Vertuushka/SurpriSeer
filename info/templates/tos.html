@@ -2,13 +2,17 @@
 {% block title %}
     Terms of Service - SurpriSeer
 {% endblock %} 
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'style/infopages.css' %}">
+{% endblock %}
 
 {% block content %}
-<div class="mainpageHeader">
+<div class="mainContentHeader">
     <h1>Terms of Service</h1>
-    <p>Welcome to SurpriSeer! By using this website, you agree to the following terms and conditions. Please read them carefully.</p>
-    <p>This agreement outlines the terms and conditions for using SurpriSeer ("we", "our", or "us"). The website is owned and operated by an individual (the "Owner", "we", "our", or "us") who remains anonymous. By accessing and using this website, you agree to comply with and be bound by these terms. If you do not agree, do not use the website.</p>
 </div>
+<p class="textBlock">Welcome to SurpriSeer! By using this website, you agree to the following terms and conditions. Please read them carefully.</p>
+<p class="textBlock">This agreement outlines the terms and conditions for using SurpriSeer ("we", "our", or "us"). The website is owned and operated by an individual (the "Owner", "we", "our", or "us") who remains anonymous. By accessing and using this website, you agree to comply with and be bound by these terms. If you do not agree, do not use the website.</p>
 
 <div class="textBlock">
     <h2>Registration and Access</h2>

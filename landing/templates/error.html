@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}
+    SurpriSeer
+{% endblock %} 
+
+{% block content %}
+<div class="mainpageHeader">
+    <h1>Something went wrong</h1>
+    {% if error_content %}
+        <p class="mainpageHeaderDesctiption">{{ error_content }}</p>
+    {% endif %}
+</div>        
+<img src="{% static 'img/error.svg' %}" alt="">
+{% endblock %}

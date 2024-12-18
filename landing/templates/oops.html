@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}
+    SurpriSeer - 404
+{% endblock %} 
+
+{% block content %}
+<div class="mainContentHeader">
+    <h1>Somethig went wrong</h1>
+</div>        
+<img src="{% static 'img/error.svg' %}" alt="" class="landingImg">
+<a href="{% url 'homepage' %}"><button class="actionButton">Go to main page</button></a>
+{% endblock %}

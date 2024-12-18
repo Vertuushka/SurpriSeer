@@ -2,20 +2,25 @@
 {% block title %}
     Dashboard - SurpriSeer
 {% endblock %} 
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'style/dashboard.css' %}">
+{% endblock %}
 
 {% block content %}
-<div class="mainpageHeadr">
+<div class="mainContentHeader">
     <h1>My wishlists</h1>
 </div>
 <div class="pageContent">
     <div class="wishlistsContainer">
-        {% for row, element in user_wishLists %}
         <div class="wishCardRow">
-            <a href="" class="wishCard">
+        {% for element in user_wishLists %}
+            <a href="{% url 'wishList' element.code %}" class="wishCard gradient{{element.color_scheme}}">
                 <p class="wishCardHeader">{{element.name}}</p>
+                <p class="wishCardAuthor">{{element.user.username}}</p>
             </a>
-        </div>
         {% endfor %}
+        </div>
     </div>
     <div class="wishListActionButtonContainer">
         <a href="{% url 'newWishList' %}" class="buttonLink"><button class="actionButton">Create or join wishlist</button></a>

@@ -17,21 +17,27 @@
 <body>
     <div class="pageContent">
         <header>
-            <div class="content">
-                <p class="logoName">SurpriSeer</p>
-                <img src="{% static 'img/surpriseer_logo.svg' %}" alt="logotype" class="logo">
-            </div>
-            <div class="content headerLinkContainer">
+            <a href="{% url 'homepage' %}" class="content">
+                <p class="bold">SurpriSeer</p>
+                <img src="{% static 'img/surpriseer_logo.svg' %}" alt="SurpriSeer - logotype">
+            </a>
+            <div class="headerLinkContainer">
                 {% if request.user.is_authenticated %}
                     <a href="{% url 'dashboard' %}" class="headerLink">My wishlists</a>
+                    <a href="{% url 'under_development' %}" class="headerLink" >{{request.user.username}}</a>
                 {% else %}
                     <a href="{% provider_login_url 'google' %}" class="headerLink">Login</a>
                 {% endif %}
                 {% if request.user.is_authenticated and request.user.is_staff %}
-                    <a href="{% url 'admin:index' %}" class="headerLink" target="_blank">Admin</a>
+                    <a href="{% url 'admin:index' %}" class="headerLink" target="_blank">admin site</a>
                 {% endif %}
             </div>
         </header>
+        {% if alert_content %}
+        <div class="alert">
+            <p>{{ alert_content }}</p>
+        </div>
+        {% endif %}
         <main>
             {% block content %}
             {% endblock %}
@@ -44,7 +50,7 @@
                 <a href="{% url 'privacy' %}" class="footerLink">Privacy Policy</a>
                 <a href="{% url 'tos' %}" class="footerLink">Terms of Service</a>
                 <a href="{% url 'about' %}" class="footerLink">About Us</a>
-                <a href="" class="footerLink">Contact Us</a>
+                <a href="{% url 'under_development' %}" class="footerLink">Contact Us</a>
             </div>
         </div>
         <div class="separator"></div>

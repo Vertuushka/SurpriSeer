@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-hon+=#)jjpq$dnqx3i==!%tb!tp%ffgkms%r05opr635jimkzl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'surpriseer.com']
 
 
 # Application definition
@@ -163,3 +163,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 SOCIALACCOUNT_LOGIN_ON_GET = True
+
+
+LOGIN_URL = '/accounts/google/login/'
+LOGIN_REDIRECT_URL = '/dashboard/'

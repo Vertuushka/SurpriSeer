@@ -2,12 +2,16 @@
 {% block title %}
     Privacy Policy - SurpriSeer
 {% endblock %} 
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'style/infopages.css' %}">
+{% endblock %}
 
 {% block content %}
 <div class="mainpageHeadr">
     <h1>Privacy Policy</h1>
 </div>
-<p>This Privacy Policy explains how SurpriSeer ("we", "our", or "us") collects, uses, and protects your personal information when you visit and use our website.</p>
+<p class="textBlock">This Privacy Policy explains how SurpriSeer ("we", "our", or "us") collects, uses, and protects your personal information when you visit and use our website.</p>
 
 <div class="textBlock">
     <h2>Information We Collect</h2>

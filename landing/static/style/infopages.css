@@ -1,0 +1,12 @@
+.textBlock {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media (max-width: 790px) {
+    .textBlock {
+        width: 100%;
+    }
+}

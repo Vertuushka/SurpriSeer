@@ -5,10 +5,10 @@
     SurpriSeer
 {% endblock %} 
 {% block content %}
-    <div class="mainpageHeader">
+    <div class="mainContentHeader">
         <h1>Perfect gifts, every time</h1>
-        <p class="mainpageHeaderDesctiption">Build your wishlist, invite friends, and let them choose — all while keeping it a surprise. 🎉</p>
+        <p>Build your wishlist, invite friends, and let them choose — all while keeping it a surprise. 🎉</p>
     </div>        
-    <img src="{% static 'img/mainpage_img.svg' %}" alt="">
-    <a href="" class="buttonLink"><button class="actionButton">Get started!</button></a>
+    <img src="{% static 'img/mainpage_img.svg' %}" alt="" class="landingImg">
+    <a href="{% url 'dashboard' %}"><button class="actionButton">Get started!</button></a>
 {% endblock %}
